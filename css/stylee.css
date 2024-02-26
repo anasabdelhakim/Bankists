@@ -102,23 +102,21 @@ header .container {
 .input-login.input-login-password {
   margin: 0px 10px;
 }
-form i {
+i {
   background-color: #f3f3f3;
   font-size: 20px;
   font-weight: 300;
   margin-left: 10px;
   transition: transform 0.3s linear, color 0.3s linear;
-  color: #afafaf;
+ color: var(--main-black);
 }
 .btn--login {
   border: none;
 }
-form i:active {
+i:active {
   transform: translateX(5px);
 }
-form i:hover {
-  color: var(--main-black);
-}
+
 .text_money {
   font-size: 16px;
   color: var(--main-black);
@@ -235,28 +233,16 @@ main .internal-movments {
 .btns {
   outline: none;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-
+  background-color: white;
+  border-radius: 5px;
   border: none;
   cursor: pointer;
   height: 30px;
 }
 
-.btns button {
-  cursor: pointer;
-  background-color: white;
-  width: calc(100% - 5px);
-  border-radius: 5px;
-  height: 100%;
-  color: #474747;
-  transition: transform 0.3s linear;
-  font-size: 22px;
-  margin-bottom: 5px;
-  margin-left: 5px;
-  border: none;
-}
-.btns:active button {
+.btns:active i {
   transition: 0.3s;
   transform: translateX(5px);
 }
@@ -451,7 +437,7 @@ main .internal-movments {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     max-width: 100%;
   }
-  form i {
+   i {
     font-size: 13px;
     margin-top: 3px;
   }
