@@ -412,6 +412,9 @@ main .internal-movments {
     padding: 3px 13px;
     width: 89px;
   }
+  .functional-app .movments {
+    border-bottom: 1px solid #f3f3f3;
+  }
   .functional-app {
     height: 250px;
   }
@@ -450,7 +453,7 @@ main .internal-movments {
   }
 
   .login-text {
-    margin-right: 3px;
+    margin-right: 0px;
     font-size: 15px;
   }
 
