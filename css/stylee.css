@@ -450,6 +450,7 @@ main .internal-movments {
   }
 
   .login-text {
+    margin-right: 3px;
     font-size: 15px;
   }
 
