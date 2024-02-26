@@ -237,23 +237,23 @@ main .internal-movments {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: white;
+
   border: none;
   cursor: pointer;
   height: 30px;
-  border-radius: 5px;
 }
 
 .btns button {
   cursor: pointer;
-  background-color: inherit;
+  background-color: white;
   width: calc(100% - 5px);
   border-radius: 5px;
   height: 100%;
   color: #474747;
   transition: transform 0.3s linear;
   font-size: 22px;
-
+  margin-bottom: 5px;
+  margin-left: 5px;
   border: none;
 }
 .btns:active button {
@@ -416,6 +416,9 @@ main .internal-movments {
 }
 
 @media (max-width: 430px) {
+    .btns button {
+    font-size: 24px;
+  }
   .input-login {
     height: 25px;
     font-size: 11px;
