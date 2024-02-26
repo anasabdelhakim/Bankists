@@ -108,7 +108,7 @@ header .container {
   margin: 0px 20px 0px 10px;
 }
 i {
-  background-color: #f3f3f3;
+  background-color: transparent;
   font-size: 20px;
   font-weight: 300;
   transition: transform 0.3s linear, color 0.3s linear;
