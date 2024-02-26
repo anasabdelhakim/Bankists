@@ -233,7 +233,10 @@ main .internal-movments {
 }
 .btns {
   outline: none;
-  font-size: 20px;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   color: #474747;
   border: none;
@@ -371,14 +374,14 @@ main .internal-movments {
   }
   .btn--sort {
     position: absolute;
-    bottom: -10px;
-    left: 0;
+    bottom: -5px;
+    left: 10;
     margin-bottom: var(--main-section);
   }
   .time {
     position: absolute;
-    bottom: -10px;
-    right: 0;
+    bottom: -5px;
+    right: 10;
     margin-bottom: var(--main-section);
   }
 }
@@ -405,6 +408,8 @@ main .internal-movments {
   .input-login {
     height: 25px;
     font-size: 11px;
+    padding: 2px 9px;
+    width: 80px;
   }
   .functional-app {
     height: 250px;
@@ -446,10 +451,7 @@ main .internal-movments {
   .login-text {
     font-size: 13px;
   }
-  .input-login {
-    padding: 2px 9px;
-    width: 80px;
-  }
+
   .balance p {
     font-size: 7px;
   }
