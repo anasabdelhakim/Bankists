@@ -103,6 +103,7 @@ header .container {
   margin: 0px 10px;
 }
 form i {
+  background-color: #f3f3f3;
   font-size: 20px;
   font-weight: 300;
   margin-left: 10px;
