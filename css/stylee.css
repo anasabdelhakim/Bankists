@@ -233,22 +233,31 @@ main .internal-movments {
 }
 .btns {
   outline: none;
-  cursor: pointer;
-  font-size: 22px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-color: white;
-  color: #474747;
   border: none;
-  border-radius: 5px;
+  cursor: pointer;
   height: 30px;
-  transition: background-color 0.3s linear, color 0.3s linear;
+  border-radius: 5px;
 }
 
-.btns:hover {
-  background-color: #474747;
-  color: white;
+.btns button {
+  cursor: pointer;
+  background-color: inherit;
+  width: calc(100% - 5px);
+  border-radius: 5px;
+  height: 100%;
+  color: #474747;
+  transition: transform 0.3s linear;
+  font-size: 22px;
+
+  border: none;
+}
+.btns:active button {
+  transition: 0.3s;
+  transform: translateX(5px);
 }
 .all {
   display: flex;
