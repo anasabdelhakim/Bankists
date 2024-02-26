@@ -376,13 +376,13 @@ main .internal-movments {
   .btn--sort {
     position: absolute;
     bottom: -5px;
-    left: 10;
+    left: 10px;
     margin-bottom: var(--main-section);
   }
   .time {
     position: absolute;
     bottom: -5px;
-    right: 10;
+    right: 10px;
     margin-bottom: var(--main-section);
   }
 }
