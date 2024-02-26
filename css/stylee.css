@@ -503,7 +503,7 @@ main .internal-movments {
     padding: 22.5px 30px;
   }
 }
-@media (max-width: 290px) {
+@media (max-width: 275px) {
   header {
     height: 120px;
   }
