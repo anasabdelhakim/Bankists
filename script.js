@@ -140,7 +140,8 @@ function update(acc) {
   calcSummary(acc);
 }
 
-btnLogin.addEventListener("click", function () {
+btnLogin.addEventListener("click", function (e) {
+  e.preventDefault();
   CurrentAccount = accounts.find((le) => le.username === inputUsername.value);
   if (
     CurrentAccount.pin === +inputPassword.value &&
