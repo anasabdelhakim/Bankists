@@ -18,6 +18,11 @@ body {
   background-color: #f3f3f3;
   height: 100vh;
 }
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
 
 :root {
   --color-transfer: linear-gradient(to top left, #ffb003, #ffcb03);
