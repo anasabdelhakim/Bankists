@@ -233,6 +233,7 @@ main .internal-movments {
 }
 .btns {
   outline: none;
+  cursor: pointer;
   font-size: 22px;
   display: flex;
   justify-content: center;
