@@ -306,7 +306,7 @@ main .internal-movments {
 }
 .login-text {
   color: var(--main-black);
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .internal-money {
@@ -407,10 +407,10 @@ main .internal-movments {
 
 @media (max-width: 430px) {
   .input-login {
-    height: 25px;
-    font-size: 11px;
-    padding: 2px 9px;
-    width: 80px;
+    height: 28px;
+    font-size: 12px;
+    padding: 3px 13px;
+    width: 89px;
   }
   .functional-app {
     height: 250px;
@@ -439,18 +439,18 @@ main .internal-movments {
     max-width: 100%;
   }
    i {
-    font-size: 13px;
+     font-size: 14px;
     margin-top: 3px;
   }
   .logo {
-    width: 28px;
+    width: 35px;
   }
   .input-login::placeholder {
     font-size: 11px;
   }
 
   .login-text {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .balance p {
@@ -497,6 +497,11 @@ main .internal-movments {
   }
   .transfer {
     padding: 22.5px 30px;
+  }
+}
+@media (max-width: 290px) {
+  header {
+    height: 120px;
   }
 }
 
