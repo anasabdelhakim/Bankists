@@ -24,6 +24,13 @@ button {
   outline: none;
   background-color: transparent;
 }
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
 
 :root {
   --color-transfer: linear-gradient(to top left, #ffb003, #ffcb03);
