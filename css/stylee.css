@@ -178,7 +178,7 @@ main .internal-movments {
   overflow: scroll;
   border-radius: 10px 0px 0px 0px;
   border: 2px solid #eee;
-  max-height: 505.5px;
+  max-height: 508.4px;
 }
 .functional-app .movments {
   padding: 25px 30px;
@@ -317,7 +317,7 @@ main .internal-movments {
 
 .internal-money {
   position: relative;
-  height: 80px;
+  height: 79px;
   display: flex;
   justify-content: space-between;
   align-items: center;
