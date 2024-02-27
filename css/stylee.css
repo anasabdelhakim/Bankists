@@ -297,6 +297,12 @@ main .internal-movments {
   font-size: 12px;
   color: #474747;
 }
+.fa-arrow-right-long {
+  margin-top: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 
 .user-transfer {
   display: flex;
@@ -445,6 +451,10 @@ main .internal-movments {
      font-size: 14px;
     margin-top: 3px;
   }
+  .fa-arrow-right-long {
+    font-size: 13px;
+  }
+  
   .logo {
     width: 35px;
   }
