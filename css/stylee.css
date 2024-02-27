@@ -299,6 +299,7 @@ main .internal-movments {
 }
 .fa-arrow-right-long {
   margin-top: 3px;
+  outline: none;
   font-size: 16px;
   cursor: pointer;
 }
