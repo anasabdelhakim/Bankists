@@ -421,9 +421,7 @@ main .internal-movments {
   .functional-app .movments {
     border-bottom: 1px solid #f3f3f3;
   }
-  .functional-app {
-    height: 250px;
-  }
+
   .collect_label div:not(:first-child) {
     margin-left: 10px;
   }
