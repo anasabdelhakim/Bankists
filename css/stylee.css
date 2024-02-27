@@ -19,6 +19,7 @@ body {
   height: 100vh;
 }
 button {
+  cursor: pointer;
   border: none;
   outline: none;
   background-color: transparent;
@@ -246,6 +247,8 @@ main .internal-movments {
   height: 30px;
 }
 
+
+
 .btns:active i {
   transition: 0.3s;
   transform: translateX(5px);
@@ -301,7 +304,6 @@ main .internal-movments {
   margin-top: 3px;
   outline: none;
   font-size: 16px;
-  cursor: pointer;
 }
 
 
