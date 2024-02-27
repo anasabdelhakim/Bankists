@@ -61,6 +61,10 @@ const ValueInterest = document.querySelector(".summary__value--interest");
 
 let AccountTransferTo, AmountLoan;
 
+//Body Section{
+  document.querySelector("body").style.overflowY = "hidden";
+
+//}
 Bank.classList.add("opac__close");
 inputUsername.focus();
 const m = function (first, then) {
@@ -147,6 +151,8 @@ btnLogin.addEventListener("click", function (e) {
     CurrentAccount.pin === +inputPassword.value &&
     CurrentAccount.username === inputUsername.value
   ) {
+    document.querySelector("body").style.overflowY = "auto";
+    
     loginText.textContent = `Welcome back, ${
       CurrentAccount.owner.split(" ")[0]
     }`;
