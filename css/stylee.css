@@ -88,21 +88,132 @@ header .container {
   display: flex;
   align-items: center;
 }
-.input-login {
+
+.user__name,
+.user__password,
+.input-login,
+.password-login,
+.user-login {
   border: none;
   outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 120px;
-  padding: 8px 25px;
-  height: 37px;
   font-weight: bold;
   border-radius: 30px;
+  padding: 8px 30px;
+  height: 37px;
   font-size: 17px;
-  color: #474747;
 }
+
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
+}
+.craete__account {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 8;
+}
+
+.account_User {
+  width: 350px;
+  height: 320px;
+  padding: 30px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+}
+.account_User form {
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.sclad {
+  transition-delay: 0.3s;
+  transform: scale(1);
+}
+.account_User img {
+  width: 70px;
+}
+.account_User input {
+  border: 1px solid #ccc;
+  box-shadow: var(--shadow-effect);
+}
+
+.password-login,
+.user-login {
+  background-color: #e7e7e7;
+}
+.account_User p {
+  margin: 10px 0px;
+  font-size: 15px;
+  color: var(--main-black);
+  font-weight: 500;
+}
+
+.submit {
+  grid-column: 1 / span 2;
+  background: var(--color-close);
+  padding: 15px 0px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  transition: opacity 0.3s linear;
+  opacity: 0.9;
+}
+.submit:hover {
+  opacity: 1;
+}
+
+.fa-lock,
+.fa-user {
+  font-size: 13px;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gg {
+  position: relative;
+}
+
+.fa-lock {
+  position: absolute;
+  left: 11px;
+}
+.fa-user {
+  position: absolute;
+  left: 11px;
+}
+.ss {
+  width: 135px;
+}
+
+
 .input-login::placeholder {
   font-size: 17px;
   color: #afafaf;
@@ -422,12 +533,7 @@ main .internal-movments {
 }
 
 @media (max-width: 430px) {
-  .input-login {
-    height: 28px;
-    font-size: 12px;
-    padding: 3px 13px;
-    width: 89px;
-  }
+
   .functional-app .movments {
     border-bottom: 1px solid #f3f3f3;
   }
@@ -466,7 +572,7 @@ main .internal-movments {
   .logo {
     width: 35px;
   }
-  .input-login::placeholder {
+  ::placeholder {
     font-size: 11px;
   }
 
@@ -520,6 +626,48 @@ main .internal-movments {
   .transfer {
     padding: 22.5px 30px;
   }
+   .account_User form {
+    gap: 8px;
+  }
+  .account_User {
+    width: 260px;
+    height: 230px;
+    padding: 20px;
+  }
+  
+  .user__name,
+  .user__password,
+  .input-login,
+  .password-login,
+  .user-login {
+    height: 28px;
+    font-size: 12px;
+    padding: 3px 20px;
+  }
+  .input-login {
+    width: 89px;
+  }
+  .ss {
+    width: 90px;
+  }
+  .fa-lock,
+  .fa-user {
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 8px;
+  }
+
+  .account_User img {
+    width: 50px;
+  }
+
+  .account_User p {
+    margin: 5px 0px;
+    font-size: 11px;
+    color: var(--main-black);
+    font-weight: 500;
+  }
+  
 }
 
 
