@@ -108,6 +108,10 @@ header .container {
 }
 
 
+.input-login {
+  width: 120px;
+  color: #474747;
+}
 
 .overlay {
   position: absolute;
