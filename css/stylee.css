@@ -89,11 +89,8 @@ header .container {
   align-items: center;
 }
 
-.user__name,
-.user__password,
-.input-login,
-.password-login,
-.user-login {
+  .input-login,
+  .ss {
   border: none;
   outline: none;
   display: flex;
@@ -576,7 +573,8 @@ main .internal-movments {
   .logo {
     width: 35px;
   }
-  ::placeholder {
+  .input-login::placeholder,
+  .ss::placeholder {
     font-size: 11px;
   }
 
@@ -639,15 +637,15 @@ main .internal-movments {
     padding: 20px;
   }
   
-  .user__name,
-  .user__password,
+
   .input-login,
-  .password-login,
-  .user-login {
+  .ss 
+{
     height: 28px;
     font-size: 12px;
     padding: 3px 20px;
   }
+  
   .input-login {
     width: 89px;
   }
@@ -670,6 +668,9 @@ main .internal-movments {
     font-size: 11px;
     color: var(--main-black);
     font-weight: 500;
+  }
+    .submit {
+    font-size: 11px;
   }
   
 }
