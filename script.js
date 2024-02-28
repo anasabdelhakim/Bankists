@@ -158,11 +158,12 @@ btnLogin.addEventListener("click", function (e) {
     }`;
     Bank.classList.remove("opac__close");
     Bank.classList.add("opac__open");
-  }
   inputUsername.value = "";
   inputPassword.value = "";
   inputPassword.blur();
   update(CurrentAccount);
+  }
+
 });
 
 btnsort.addEventListener("click", function (e) {
@@ -190,9 +191,8 @@ btnTransferMney.addEventListener("click", function (e) {
     inputMoneyTransferd.value = "";
     inputAmountTransferd.value = "";
     inputAmountTransferd.blur();
+     update(CurrentAccount);
   }
-
-  update(CurrentAccount);
 });
 
 btnLoan.addEventListener("click", function (e) {
@@ -203,9 +203,10 @@ btnLoan.addEventListener("click", function (e) {
     CurrentAccount.movements.some((mov) => mov >= +Requestloan.value * 0.1)
   ) {
     CurrentAccount.movements.push(AmountLoan);
+    Requestloan.value = "";
+    update(CurrentAccount);
   }
-  Requestloan.value = "";
-  update(CurrentAccount);
+
 });
 
 btncloseAcount.addEventListener("click", function (e) {
@@ -214,6 +215,7 @@ btncloseAcount.addEventListener("click", function (e) {
     CurrentAccount.pin === +ConfirmPIN.value &&
     CurrentAccount.username === ConfirmUser.value
   ) {
+    loginText.textContent = `Log in to get started`;
     const RemoveAccountIndex = accounts.findIndex(
       (le) => le.pin === +ConfirmPIN.value
     );
