@@ -148,8 +148,7 @@ btnLogin.addEventListener("click", function (e) {
   e.preventDefault();
   CurrentAccount = accounts.find((le) => le.username === inputUsername.value);
   if (
-    CurrentAccount.pin === +inputPassword.value &&
-    CurrentAccount.username === inputUsername.value
+    CurrentAccount.pin === +inputPassword.value 
   ) {
     document.querySelector("body").style.overflowY = "auto";
     
