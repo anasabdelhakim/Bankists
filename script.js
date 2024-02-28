@@ -64,6 +64,11 @@ let AccountTransferTo, AmountLoan;
 //Body Section{
   document.querySelector("body").style.overflowY = "hidden";
 
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector(".account_User").classList.add("sclad");
+});
+
+
 //}
 Bank.classList.add("opac__close");
 inputUsername.focus();
