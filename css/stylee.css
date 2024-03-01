@@ -587,12 +587,12 @@ js changes
     font-size: 12px;
   }
   .ss {
-    font-size: 10px;
+    font-size: 12px;
   }
   
   .fa-lock,
   .fa-user {
-    top: 38%;
+    top: 40%;
     transform: translateY(-50%);
     font-size: 8px;
   }
