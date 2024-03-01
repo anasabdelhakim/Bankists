@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //}
 Bank.classList.add("opac__close");
-inputUsername.focus();
+User_Iinput.focus();
 const m = function (first, then) {
   first.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
@@ -84,6 +84,27 @@ const m = function (first, then) {
 m(inputUsername, inputPassword, btnLogin);
 m(inputMoneyTransferd, inputAmountTransferd);
 m(ConfirmUser, ConfirmPIN);
+
+
+btnSubmit.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (
+    User_Iinput.value.split(" ").length > 1 &&
+    accounts.slice(0, -1).every((ac) => ac.owner !== User_Iinput.value) &&
+    accounts.slice(0, -1).every((ac) => ac.pin !== +User_Password.value) &&
+    User_Iinput.value.length >= 8 &&
+    User_Password.value.length >= 4
+  ) {
+    document.querySelector(".account_User").classList.remove("sclad");
+    document.querySelector(".account_User").classList.add("scladoff");
+    document.querySelector(".overlay").classList.add("overlayoff");
+  }
+});
+
+
+
+
+
 
 //create a Username
 
