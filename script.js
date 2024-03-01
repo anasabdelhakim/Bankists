@@ -254,6 +254,5 @@ btncloseAcount.addEventListener("click", function (e) {
     Bank.classList.add("opac__close");
     ConfirmUser.value = "";
     ConfirmPIN.value = "";
-    document.querySelector("body").style.overflowY = "hidden";
   }
 });
