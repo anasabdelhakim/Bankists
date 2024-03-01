@@ -28,19 +28,7 @@ const account4 = {
   pin: 4444,
 };
 
-const owner = document.getElementById("user_name").value;
-const pin = parseInt(document.getElementById("user_pin").value);
-
-const UserAccount = {
-  owner: owner,
-  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
-  interestRate: 1.5,
-  pin: pin,
-};
-
 const accounts = [account1, account2, account3, account4, UserAccount];
-accounts.push(UserAccount);
-
 let CurrentAccount;
 let sort = false;
 let totalMoneyAccount;
@@ -101,9 +89,32 @@ m(inputMoneyTransferd, inputAmountTransferd);
 m(ConfirmUser, ConfirmPIN);
 m(User_Iinput, User_Password);
 
+const createUserAccount = (e) => {
+  e.preventDefault();
+  const UserAccount = {
+    owner: document.getElementById("user_name").value,
+    movements: [750, -250],
+    interestRate: 1.2,
+    pin: parseInt(document.getElementById("user_pin").value),
+  };
+  accounts.push(UserAccount);
+  //create a Username
+  const CreateUsername = function (acc) {
+    acc.forEach((el) => {
+      el.username = el.owner
+        .split(" ")
+        .map((letter) => letter[0])
+        .join("")
+        .toLowerCase();
+    });
+  };
+  CreateUsername(accounts);
+};
+
 btnSubmit.addEventListener("click", function (e) {
   e.preventDefault();
   if (
+    isNaN(User_Iinput.value.split(" ").join("")) &&
     User_Iinput.value.split(" ").length > 1 &&
     accounts.slice(0, -1).every((ac) => ac.owner !== User_Iinput.value) &&
     accounts.slice(0, -1).every((ac) => ac.pin !== +User_Password.value) &&
@@ -115,20 +126,7 @@ btnSubmit.addEventListener("click", function (e) {
     document.querySelector(".overlay").classList.add("overlayoff");
   }
 });
-
-//create a Username
-
-const CreateUsername = function (acc) {
-  acc.forEach((el) => {
-    return (el.username = el.owner
-      .split(" ")
-      .map((letter) => letter[0])
-      .join("")
-      .toLowerCase());
-  });
-};
-CreateUsername(accounts);
-console.log(CreateUsername(accounts));
+btnSubmit.addEventListener("click", createUserAccount);
 
 function displayMovemnts(movment, s = false) {
   movmentcont.innerHTML = "";
