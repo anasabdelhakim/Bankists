@@ -400,14 +400,14 @@ main .internal-movments {
   }
   .btn--sort {
     position: absolute;
-    bottom: -5px;
-    left: 10px;
+    bottom: -3px;
+    left: 8px;
     margin-bottom: var(--main-section);
   }
   .time {
     position: absolute;
-    bottom: -5px;
-    right: 10px;
+    bottom: -3px;
+    right: 8px;
     margin-bottom: var(--main-section);
   }
 }
