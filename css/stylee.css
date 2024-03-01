@@ -579,19 +579,20 @@ js changes
     padding: 11px 0px;
     font-size: 11px;
   }
+  .input-login {
+    font-size: 12px;
+  }
 
-  .input-login,
   .ss {
     height: 28px;
     font-size: 10px;
+    width: 90px;
     padding: 3px 20px;
   }
   .input-login {
     width: 89px;
   }
-  .ss {
-    width: 90px;
-  }
+
   .fa-lock,
   .fa-user {
     top: 37%;
