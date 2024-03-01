@@ -156,12 +156,12 @@ function calcSummary(acs) {
   const incomes = acs.movements
     .filter((mov) => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
-  ValueIn.textContent = `${incomes}€`;
+  ValueIn.textContent = `${incomes.toFixed(2)}€`;
 
   const out = acs.movements
     .filter((mov) => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-  ValueOut.textContent = `${Math.abs(out)}€`;
+  ValueOut.textContent = `${Math.abs(out.toFixed(2))}€`;
 
   const interest = acs.movements
     .filter((mov) => mov > 0)
@@ -170,7 +170,7 @@ function calcSummary(acs) {
       return id >= 1;
     })
     .reduce((acc, k) => acc + k, 0);
-  ValueInterest.textContent = `${interest}€`;
+  ValueInterest.textContent = `${interest.toFixed(2)}€`;
 }
 
 function update(acc) {
