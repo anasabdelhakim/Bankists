@@ -561,9 +561,7 @@ js changes
 }
 
 @media (max-width: 430px) {
-  .create__account {
-    top: 40%;
-  }
+
   .account_User form {
     gap: 8px;
   }
