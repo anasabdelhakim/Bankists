@@ -28,7 +28,7 @@ const account4 = {
   pin: 4444,
 };
 
-const accounts = [account1, account2, account3, account4, UserAccount];
+const accounts = [account1, account2, account3, account4];
 let CurrentAccount;
 let sort = false;
 let totalMoneyAccount;
