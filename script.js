@@ -28,7 +28,19 @@ const account4 = {
   pin: 4444,
 };
 
-const accounts = [account1, account2, account3, account4];
+const owner = document.getElementById("user_name").value;
+const pin = parseInt(document.getElementById("user_pin").value);
+
+const UserAccount = {
+  owner: owner,
+  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  interestRate: 1.5,
+  pin: pin,
+};
+
+const accounts = [account1, account2, account3, account4, UserAccount];
+accounts.push(UserAccount);
+
 let CurrentAccount;
 let sort = false;
 let totalMoneyAccount;
@@ -40,6 +52,8 @@ const inputAmountTransferd = document.querySelector(".input-Amount-transfered");
 const Requestloan = document.querySelector(".request-loan");
 const ConfirmUser = document.querySelector(".Confirm-user");
 const ConfirmPIN = document.querySelector(".Confirm-PIN");
+const User_Iinput = document.querySelector(".user__name");
+const User_Password = document.querySelector(".user__password");
 
 //btn clicker
 
@@ -48,6 +62,7 @@ const btnTransferMney = document.querySelector(".btn-transfer");
 const btnLoan = document.querySelector(".btn-loan");
 const btncloseAcount = document.querySelector(".btn-close-account");
 const btnsort = document.querySelector(".btn--sort");
+const btnSubmit = document.querySelector(".submit");
 
 //text changes
 const Bank = document.querySelector(".internal_app");
@@ -62,16 +77,14 @@ const ValueInterest = document.querySelector(".summary__value--interest");
 let AccountTransferTo, AmountLoan;
 
 //Body Section{
-  document.querySelector("body").style.overflowY = "hidden";
-
+document.querySelector("body").style.overflowY = "hidden";
+// document.querySelector(".overlay").classList.add("hidden");
+//}
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".account_User").classList.add("sclad");
 });
 
-
-//}
 Bank.classList.add("opac__close");
-User_Iinput.focus();
 const m = function (first, then) {
   first.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
@@ -81,10 +94,12 @@ const m = function (first, then) {
   });
 };
 
+//transtions focus inputs
+User_Iinput.focus();
 m(inputUsername, inputPassword, btnLogin);
 m(inputMoneyTransferd, inputAmountTransferd);
 m(ConfirmUser, ConfirmPIN);
-
+m(User_Iinput, User_Password);
 
 btnSubmit.addEventListener("click", function (e) {
   e.preventDefault();
@@ -101,11 +116,6 @@ btnSubmit.addEventListener("click", function (e) {
   }
 });
 
-
-
-
-
-
 //create a Username
 
 const CreateUsername = function (acc) {
@@ -118,6 +128,7 @@ const CreateUsername = function (acc) {
   });
 };
 CreateUsername(accounts);
+console.log(CreateUsername(accounts));
 
 function displayMovemnts(movment, s = false) {
   movmentcont.innerHTML = "";
@@ -173,22 +184,18 @@ function update(acc) {
 btnLogin.addEventListener("click", function (e) {
   e.preventDefault();
   CurrentAccount = accounts.find((le) => le.username === inputUsername.value);
-  if (
-    CurrentAccount.pin === +inputPassword.value 
-  ) {
+  if (CurrentAccount?.pin === +inputPassword.value) {
     document.querySelector("body").style.overflowY = "auto";
-    
     loginText.textContent = `Welcome back, ${
       CurrentAccount.owner.split(" ")[0]
     }`;
+    inputUsername.value = "";
+    inputPassword.value = "";
+    inputPassword.blur();
     Bank.classList.remove("opac__close");
     Bank.classList.add("opac__open");
-  inputUsername.value = "";
-  inputPassword.value = "";
-  inputPassword.blur();
-  update(CurrentAccount);
+    update(CurrentAccount);
   }
-
 });
 
 btnsort.addEventListener("click", function (e) {
@@ -216,7 +223,7 @@ btnTransferMney.addEventListener("click", function (e) {
     inputMoneyTransferd.value = "";
     inputAmountTransferd.value = "";
     inputAmountTransferd.blur();
-     update(CurrentAccount);
+    update(CurrentAccount);
   }
 });
 
@@ -231,7 +238,6 @@ btnLoan.addEventListener("click", function (e) {
     Requestloan.value = "";
     update(CurrentAccount);
   }
-
 });
 
 btncloseAcount.addEventListener("click", function (e) {
