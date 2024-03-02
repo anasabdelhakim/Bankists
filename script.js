@@ -97,7 +97,20 @@ const createUserAccount = (e) => {
     interestRate: 1.2,
     pin: parseInt(document.getElementById("user_pin").value),
   };
-  accounts.push(UserAccount);
+  if (
+    isNaN(User_Iinput.value.split(" ").join("")) &&
+    User_Iinput.value.split(" ").length > 1 &&
+    accounts.every((ac) => ac.owner !== User_Iinput.value) &&
+    accounts.every((ac) => ac.pin !== +User_Password.value) &&
+    User_Iinput.value.length >= 8 &&
+    User_Iinput.value.length <= 12 &&
+    User_Password.value.length >= 4
+  ) {
+    accounts.push(UserAccount);
+    document.querySelector(".account_User").classList.remove("sclad");
+    document.querySelector(".account_User").classList.add("scladoff");
+    document.querySelector(".overlay").classList.add("overlayoff");
+  }
   //create a Username
   const CreateUsername = function (acc) {
     acc.forEach((el) => {
@@ -111,21 +124,6 @@ const createUserAccount = (e) => {
   CreateUsername(accounts);
 };
 
-btnSubmit.addEventListener("click", function (e) {
-  e.preventDefault();
-  if (
-    isNaN(User_Iinput.value.split(" ").join("")) &&
-    User_Iinput.value.split(" ").length > 1 &&
-    accounts.slice(0, -1).every((ac) => ac.owner !== User_Iinput.value) &&
-    accounts.slice(0, -1).every((ac) => ac.pin !== +User_Password.value) &&
-    User_Iinput.value.length >= 8 &&
-    User_Password.value.length >= 4
-  ) {
-    document.querySelector(".account_User").classList.remove("sclad");
-    document.querySelector(".account_User").classList.add("scladoff");
-    document.querySelector(".overlay").classList.add("overlayoff");
-  }
-});
 btnSubmit.addEventListener("click", createUserAccount);
 
 function displayMovemnts(movment, s = false) {
