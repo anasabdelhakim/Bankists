@@ -64,10 +64,8 @@ const ValueInterest = document.querySelector(".summary__value--interest");
 
 let AccountTransferTo, AmountLoan;
 
-//Body Section{
 document.querySelector("body").style.overflowY = "hidden";
-// document.querySelector(".overlay").classList.add("hidden");
-//}
+
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".account_User").classList.add("sclad");
 });
@@ -81,6 +79,17 @@ const m = function (first, then) {
     }
   });
 };
+function scrollToTop() {
+  const header = document.querySelector("header");
+  const headerPosition = header.getBoundingClientRect().top;
+  const offset = window.pageYOffset;
+  const targetPosition = headerPosition + offset;
+
+  window.scrollTo({
+    top: targetPosition,
+    behavior: "smooth",
+  });
+}
 
 //transtions focus inputs
 User_Iinput.focus();
@@ -252,5 +261,7 @@ btncloseAcount.addEventListener("click", function (e) {
     Bank.classList.add("opac__close");
     ConfirmUser.value = "";
     ConfirmPIN.value = "";
+    scrollToTop()
+    document.querySelector("body").style.overflowY = "hidden";
   }
 });
