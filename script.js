@@ -79,18 +79,6 @@ const m = function (first, then) {
     }
   });
 };
-function scrollToTop() {
-  const header = document.querySelector("header");
-  const headerPosition = header.getBoundingClientRect().top;
-  const offset = window.pageYOffset;
-  const targetPosition = headerPosition + offset;
-
-  window.scrollTo({
-    top: targetPosition,
-    behavior: "smooth",
-  });
-}
-
 //transtions focus inputs
 User_Iinput.focus();
 m(inputUsername, inputPassword, btnLogin);
@@ -261,6 +249,5 @@ btncloseAcount.addEventListener("click", function (e) {
     Bank.classList.add("opac__close");
     ConfirmUser.value = "";
     ConfirmPIN.value = "";
-    scrollToTop()
   }
 });
