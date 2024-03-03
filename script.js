@@ -96,10 +96,10 @@ const createUserAccount = (e) => {
   };
   if (
     isNaN(User_Iinput.value.split(" ").join("")) &&
-    User_Iinput.value.split(" ").length > 1 &&
     accounts.every((ac) => ac.owner !== User_Iinput.value) &&
     accounts.every((ac) => ac.pin !== +User_Password.value) &&
-    User_Iinput.value.length >= 8 &&
+    User_Iinput.value.length <= 15 &&
+    User_Iinput.value.length >= 3 &&
     User_Password.value.length === 4
   ) {
     accounts.push(UserAccount);
@@ -179,7 +179,9 @@ btnLogin.addEventListener("click", function (e) {
   if (CurrentAccount?.pin === +inputPassword.value) {
     document.querySelector("body").style.overflowY = "auto";
     loginText.textContent = `Welcome back, ${
-      CurrentAccount.owner.split(" ")[0]
+      CurrentAccount.owner.split(" ").length > 1
+        ? CurrentAccount.owner.split(" ")[0]
+        : CurrentAccount.owner
     }`;
     inputUsername.value = "";
     inputPassword.value = "";
