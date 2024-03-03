@@ -100,8 +100,7 @@ const createUserAccount = (e) => {
     accounts.every((ac) => ac.owner !== User_Iinput.value) &&
     accounts.every((ac) => ac.pin !== +User_Password.value) &&
     User_Iinput.value.length >= 8 &&
-    User_Iinput.value.length <= 12 &&
-    User_Password.value.length >= 4
+    User_Password.value.length === 4
   ) {
     accounts.push(UserAccount);
     document.querySelector(".account_User").classList.remove("sclad");
