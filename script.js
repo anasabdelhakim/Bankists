@@ -93,7 +93,6 @@ function scrollToTop() {
 }
 
 
-
 //transtions focus inputs
 User_Iinput.focus();
 m(inputUsername, inputPassword, btnLogin);
