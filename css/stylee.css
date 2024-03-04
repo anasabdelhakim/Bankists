@@ -449,8 +449,8 @@ js changes
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(2px);
-  transition: backdrop-filter 0.7s linear, background-color 0.7s linear;
+  backdrop-filter: blur(3px);
+  transition: backdrop-filter 0.5s linear, background-color 0.5s linear;
   z-index: 5;
 }
 .overlayoff {
@@ -481,7 +481,7 @@ js changes
   justify-content: space-between;
   align-items: center;
   transform: scale(0);
-  transition: transform 0.7s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 .account_User form {
   display: grid;
