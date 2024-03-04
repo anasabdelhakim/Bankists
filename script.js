@@ -264,6 +264,6 @@ btncloseAcount.addEventListener("click", function (e) {
     scrollToTop();
     setTimeout(function () {
       document.querySelector("body").style.overflowY = "hidden";
-    }, 1000);
+    }, 500);
   }
 });
