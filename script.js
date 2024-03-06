@@ -90,6 +90,9 @@ window.addEventListener("scroll", function () {
     if (window.scrollY === 0) {
       document.querySelector("body").style.overflowY = "hidden";
     } 
+   else {
+      document.querySelector("body").style.overflowY = "auto";
+    }
   });
 }
 
