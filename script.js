@@ -86,13 +86,7 @@ function scrollToTopOfHeader() {
     top: headerPosition,
     behavior: "smooth",
   });
-  window.addEventListener("scroll", function () {
-    if (window.scrollY === 0) {
-      document.querySelector("body").style.overflowY = "hidden";
-    } else {
-      document.querySelector("body").style.overflowY = "auto";
-    }
-  });
+
 }
 
 
@@ -268,5 +262,10 @@ btncloseAcount.addEventListener("click", function (e) {
     ConfirmUser.value = "";
     ConfirmPIN.value = "";
     scrollToTopOfHeader();
+      window.addEventListener("scroll", function () {
+    if (window.scrollY === 0) {
+      document.querySelector("body").style.overflowY = "hidden";
+    } 
+  });
   }
 });
