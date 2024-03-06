@@ -79,13 +79,19 @@ const m = function (first, then) {
     }
   });
 };
-function scrollToTop() {
+function scrollToTopOfHeader() {
   const header = document.querySelector("header");
   const headerPosition = header.getBoundingClientRect().top;
-
   window.scrollTo({
     top: headerPosition,
     behavior: "smooth",
+  });
+  window.addEventListener("scroll", function () {
+    if (window.scrollY === 0) {
+      document.querySelector("body").style.overflowY = "hidden";
+    } else {
+      document.querySelector("body").style.overflowY = "auto";
+    }
   });
 }
 
@@ -261,9 +267,6 @@ btncloseAcount.addEventListener("click", function (e) {
     Bank.classList.add("opac__close");
     ConfirmUser.value = "";
     ConfirmPIN.value = "";
-    scrollToTop();
-    setTimeout(function () {
-      document.querySelector("body").style.overflowY = "hidden";
-    }, 500);
+    scrollToTopOfHeader();
   }
 });
