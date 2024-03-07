@@ -268,4 +268,5 @@ btncloseAcount.addEventListener("click", function (e) {
     ConfirmPIN.value = "";
     scrollToTopOfHeader();
   }
+   document.querySelector("body").style.overflowY = "auto";
 });
