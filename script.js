@@ -31,6 +31,7 @@ const account4 = {
 const accounts = [account1, account2, account3, account4];
 let CurrentAccount;
 let sort = false;
+let mort = false;
 let totalMoneyAccount;
 //inputs feild
 const inputUsername = document.querySelector(".input-login-username");
@@ -87,7 +88,7 @@ function scrollToTopOfHeader() {
     behavior: "smooth",
   });
   window.addEventListener("scroll", function () {
-    if (window.scrollY === 0) {
+    if (window.scrollY === 0 && mort) {
       document.querySelector("body").style.overflowY = "hidden";
     } else {
       document.querySelector("body").style.overflowY = "auto";
@@ -191,6 +192,7 @@ function update(acc) {
 
 btnLogin.addEventListener("click", function (e) {
   e.preventDefault();
+  mort = false;
   CurrentAccount = accounts.find((le) => le.username === inputUsername.value);
   if (CurrentAccount?.pin === +inputPassword.value) {
     document.querySelector("body").style.overflowY = "auto";
@@ -267,6 +269,6 @@ btncloseAcount.addEventListener("click", function (e) {
     ConfirmUser.value = "";
     ConfirmPIN.value = "";
     scrollToTopOfHeader();
+    mort = true;
   }
-   document.querySelector("body").style.overflowY = "auto";
 });
