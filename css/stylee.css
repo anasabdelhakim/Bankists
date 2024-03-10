@@ -539,7 +539,7 @@ js changes
 .fa-lock,
 .fa-user {
   font-size: 13px;
-  z-index: 3;
+  z-index: 150;
   top: 50%;
   transform: translateY(-50%);
 }
