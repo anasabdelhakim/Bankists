@@ -125,7 +125,7 @@ header .container {
 .input-login.input-login-password {
   margin: 0px 20px 0px 10px;
 }
-i {
+.fa-arrow-right {
   font-size: 20px;
   font-weight: 300;
   border: none;
@@ -136,7 +136,7 @@ i {
 .btn--login {
   border: none;
 }
-i:active {
+.fa-arrow-right:active {
   transform: translateX(5px);
 }
 
@@ -450,7 +450,7 @@ js changes
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(3px);
-  transition: backdrop-filter 0.5s linear, background-color 0.5s linear;
+  transition: backdrop-filter 0.7s linear, background-color 0.7s linear;
   z-index: 5;
 }
 .overlayoff {
@@ -481,7 +481,7 @@ js changes
   justify-content: space-between;
   align-items: center;
   transform: scale(0);
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.7s ease-in-out;
 }
 .account_User form {
   display: grid;
@@ -498,10 +498,6 @@ js changes
   transform: scale(0);
 }
 
-/* .con {
-  border: 2px solid rgba(255, 255, 255, 0);
-  background-color: rgba(255, 255, 255, 0.4);
-} */
 .account_User img {
   width: 70px;
 }
@@ -539,7 +535,7 @@ js changes
 .fa-lock,
 .fa-user {
   font-size: 13px;
-  z-index: 150;
+  z-index: 3;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -560,9 +556,89 @@ js changes
   width: 135px;
 }
 
-@media (max-width: 430px) {
+/* <div class="masege_USER">
+<div class="inside_massege"> */
+
+.masege_USER {
+  position: absolute;
+  top: 16px;
+  right: 0px;
+  z-index: 100;
+  min-width: 336px;
+  padding: 16px 32px;
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+}
+.masege_USER.erorr {
+  background-color: #ffdb9b;
+  border-left: 6.4px solid #ffa502;
+}
+.masege_USER.accept {
+  background-color: #c6ff8e;
+  border-left: 6.4px solid #4caf50;
+}
+.addmassege {
+  animation: moving 1.5s ease-in-out forwards;
+}
+.removemassege {
+  animation: hide_moving 1.5s ease-in-out forwards;
+}
+
+.fa-circle-exclamation {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+}
+.erorr .fa-circle-exclamation {
+  color: #ce8500;
+}
+.accept .fa-circle-exclamation {
+  color: #4caf50;
+}
+
+.masege_USER p {
+  padding: 0 16px;
+  font-size: 14.4px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+.masege_USER.erorr p {
+  color: #ce8500;
+}
+.masege_USER.accept p {
+  color: #4caf50;
+}
+
+.cente_x {
+  border-radius: 0px 4px 4px 0px;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 17.5px 14.4px;
+  cursor: pointer;
+}
+.erorr .cente_x {
+  background-color: #ffd080;
+}
+.accept .cente_x {
+  background-color: #b7fb73;
+}
+.fa-xmark {
+  font-size: 17.6px;
+}
+.erorr .fa-xmark {
+  color: #ce8500;
+}
+.accept .fa-xmark {
+  color: #4caf50;
+}
+
+@media (max-width: 450px) {
   .create__account {
-  top: 35%;
+    top: 35%;
   }
   .account_User form {
     gap: 8px;
@@ -579,10 +655,14 @@ js changes
     padding: 11px 0px;
     font-size: 11px;
   }
+  .input-login {
+    font-size: 12px;
+  }
 
   .ss,
   .input-login {
     height: 28px;
+    font-size: 10px;
     width: 90px;
     padding: 3px 20px;
   }
@@ -590,9 +670,9 @@ js changes
     font-size: 12px;
   }
   .ss {
-    font-size: 12px;
+    font-size: 10px;
   }
-  
+
   .fa-lock,
   .fa-user {
     font-size: 8px;
@@ -629,10 +709,10 @@ js changes
     height: 95px;
   }
   .user-transfer {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: 1fr;
     max-width: 100%;
   }
-  i {
+  .fa-arrow-right {
     font-size: 14px;
     margin-top: 3px;
   }
@@ -697,5 +777,58 @@ js changes
   }
   .transfer {
     padding: 22.5px 30px;
+  }
+  .masege_USER {
+    top: 9.6px;
+    min-width: 201.6px;
+    padding: 9.6px 19.2px;
+    border-radius: 2.4px;
+  }
+
+  .fa-circle-exclamation {
+    left: 9.6px;
+    font-size: 14.4px;
+  }
+
+  .masege_USER p {
+    padding: 0 9.6px;
+    font-size: 8.64px;
+    line-height: 1.6;
+  }
+
+  .cente_x {
+    padding: 8px 8.64px;
+  }
+
+  .fa-xmark {
+    font-size: 10.56px;
+  }
+}
+@keyframes moving {
+  0% {
+    transform: translate(100%);
+  }
+  40% {
+    transform: translate(-10%);
+  }
+  80% {
+    transform: translate(-5%);
+  }
+  100% {
+    transform: translate(-10%);
+  }
+}
+@keyframes hide_moving {
+  0% {
+    transform: translate(-10%);
+  }
+  40% {
+    transform: translate(-5%);
+  }
+  80% {
+    transform: translate(-10%);
+  }
+  100% {
+    transform: translate(105%);
   }
 }
