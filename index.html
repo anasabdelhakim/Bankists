@@ -21,6 +21,23 @@
     <title>Bankist</title>
   </head>
   <body>
+    <div class="masege_USER erorr">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <p>Warning! this is a warning alert!</p>
+
+      <button class="cente_x">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="masege_USER accept">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <p>Successfully! Account Created</p>
+
+      <button class="cente_x">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
     <header id="header">
       <div class="container">
         <h1 class="login-text">Log in to get started</h1>
@@ -116,8 +133,9 @@
                 <input type="text" maxlength="4" class="inp Confirm-PIN" />
 
                 <div class="btns btn-close-account">
-                  <button><a href="#header"></a
-                    ><i class="fa-solid fa-arrow-right-long"></i></button>
+                  <button id="scrollToTopBtn">
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                  </button>
                 </div>
 
                 <label for="" class="labol">Confirm user</label>
@@ -144,7 +162,9 @@
           <button class="btn--sort">
             <i class="fa-solid fa-arrow-down-long"></i> SORT
           </button>
-          <p class="time">You will be logged out <span>05:00</span></p>
+          <p class="time">
+            You will be logged out <span class="timer">05:00</span>
+          </p>
         </div>
       </div>
     </main>
@@ -185,15 +205,14 @@
             class="ss user-login"
             aria-label="User Login"
           />
-          <input
-            maxlength="4"
-            readonly
-            type="text"
-            value="1.2%"
-            class="ss password-login"
-            aria-label="Password Login"
-          />
-
+          <div class="gg">
+            <i class="fa-solid fa-caret-down"></i>
+            <select id="currency" class="ss password-login">
+              <option value="EGP">EGP</option>
+              <option value="EUR">EUR</option>
+              <option value="USD">USD</option>
+            </select>
+          </div>
           <button type="submit" class="submit">Submit</button>
         </form>
       </div>
