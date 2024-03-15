@@ -865,10 +865,10 @@ select {
     transform: translate(0%);
   }
 }
-.timer {
-  min-width: 120px;
-  margin-left: 5px;
-}
+
 .time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   min-width: 180px;
 }
