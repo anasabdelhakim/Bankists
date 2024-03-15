@@ -866,9 +866,13 @@ select {
   }
 }
 
+.timer {
+  text-align: right;
+}
 .time {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 180px;
+
+  min-width: 170px;
 }
