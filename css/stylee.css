@@ -845,6 +845,7 @@ select {
 @keyframes moving {
   0% {
     opacity: 0;
+    z-index: -1;
     transform: translate(0%);
   }
   100% {
@@ -860,6 +861,14 @@ select {
   }
   100% {
     opacity: 0;
+    z-index: -1;
     transform: translate(0%);
   }
+}
+.timer {
+  min-width: 120px;
+  margin-left: 10px;
+}
+.time {
+  min-width: 180px;
 }
