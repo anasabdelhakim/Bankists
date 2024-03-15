@@ -833,6 +833,14 @@ select {
   .fa-xmark {
     font-size: 10.56px;
   }
+  .masege_USER.erorr {
+
+  border-left: 5.2px solid #ffa502;
+}
+.masege_USER.accept {
+
+  border-left: 5.2px solid #4caf50;
+}
 }
 @keyframes moving {
   0% {
