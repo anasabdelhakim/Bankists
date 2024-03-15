@@ -198,7 +198,7 @@ const createUserAccount = (e) => {
 
     setTimeout(function () {
       acceptMessage.classList.add("removemassege");
-    }, 4000);
+    }, 3000);
 
     errorMessage.classList.add("removemassege");
   } else {
@@ -355,6 +355,8 @@ btnLogin.addEventListener("click", function (e) {
   if (tim) clearInterval(tim);
   tim = StratLogOutTimer();
   mort = false;
+  acceptMessage.classList.add("hidden");
+  errorMessage.classList.add("hidden");
   CurrentAccount = accounts.find((le) => le.username === inputUsername.value);
   if (CurrentAccount?.pin === +inputPassword.value) {
     document.querySelector("body").style.overflowY = "auto";
