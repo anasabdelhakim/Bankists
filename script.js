@@ -182,24 +182,23 @@ const createUserAccount = (e) => {
     if (!errorMessage.classList.contains("addmassege")) {
       acceptMessage.classList.remove("hidden", "removemassege");
       acceptMessage.classList.add("addmassege");
+      setTimeout(function () {
+        acceptMessage.classList.add("removemassege");
+      }, 3000);
     } else {
       setTimeout(function () {
         acceptMessage.classList.remove("hidden", "removemassege");
         acceptMessage.classList.add("addmassege");
       }, 1500);
+      setTimeout(function () {
+        acceptMessage.classList.add("removemassege");
+      }, 4500);
     }
-
     accounts.push(UserAccount);
 
     accountUser.classList.remove("sclad");
     accountUser.classList.add("scladoff");
-
     overlay.classList.add("overlayoff");
-
-    setTimeout(function () {
-      acceptMessage.classList.add("removemassege");
-    }, 3000);
-
     errorMessage.classList.add("removemassege");
   } else {
     errorMessage.classList.remove("hidden");
