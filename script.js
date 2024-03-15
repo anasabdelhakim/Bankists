@@ -179,12 +179,13 @@ const createUserAccount = (e) => {
     User_Iinput.value.length <= 16 &&
     User_Password.value.length === 4
   ) {
-    if (!errorMessage.classList.contains("addmassege")) {
+    if (!errorMessage.classList.contains("addmassege") ||
+      errorMessage.classList.contains("removemassege")) {
       acceptMessage.classList.remove("hidden", "removemassege");
       acceptMessage.classList.add("addmassege");
       setTimeout(function () {
         acceptMessage.classList.add("removemassege");
-      }, 3000);
+      }, 5000);
     } else {
       setTimeout(function () {
         acceptMessage.classList.remove("hidden", "removemassege");
