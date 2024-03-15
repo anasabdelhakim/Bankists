@@ -844,29 +844,22 @@ select {
 }
 @keyframes moving {
   0% {
-    transform: translate(100%);
-  }
-  40% {
-    transform: translate(-10%);
-  }
-  80% {
-    transform: translate(-5%);
+    opacity: 0;
+    transform: translate(0%);
   }
   100% {
+    opacity: 1;
     transform: translate(-10%);
   }
 }
+
 @keyframes hide_moving {
   0% {
-    transform: translate(-10%);
-  }
-  40% {
-    transform: translate(-5%);
-  }
-  80% {
+    opacity: 1;
     transform: translate(-10%);
   }
   100% {
-    transform: translate(105%);
+    opacity: 0;
+    transform: translate(0%);
   }
 }
