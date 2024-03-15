@@ -867,7 +867,7 @@ select {
 }
 .timer {
   min-width: 120px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .time {
   min-width: 180px;
