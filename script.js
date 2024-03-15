@@ -216,9 +216,6 @@ const createUserAccount = (e) => {
     });
   };
   CreateUsername(accounts);
-  date.textContent = new Intl.DateTimeFormat(Knownlocal, options).format(
-    new Date()
-  );
 };
 
 function daytzbeet(currentDate) {
@@ -228,13 +225,7 @@ function daytzbeet(currentDate) {
   return `${day}/${month}/${year}`;
 }
 
-const options = {
-  day: "numeric",
-  month: "numeric",
-  year: "numeric",
-  hour: "numeric",
-  minute: "numeric",
-};
+
 const checkTheTimezero = (es) => (es < 10 ? "0" + es : es);
 
 const StratLogOutTimer = function () {
@@ -293,6 +284,17 @@ function displayMovemnts(acc, s = false) {
     const CuerrancyMovment = currencyChange(m);
     const DateMove = new Date(acc.movementsDates[i]);
     const DisplayMovemnts = formatMovementDate(DateMove);
+     const options = {
+      day: "numeric",
+      month: "numeric",
+      year: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    };
+    date.textContent = Intl.DateTimeFormat(
+      CurrentAccount.locale,
+      options
+    ).format(new Date());
     let type = m > 0 ? "DEPOSIT" : "WITHDRAWAL";
     const html = `<div class="all">
       <div class="movments">
