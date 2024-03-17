@@ -606,10 +606,10 @@ select {
   border-left: 6.4px solid #4caf50;
 }
 .addmassege {
-  animation: moving 1.5s ease-in-out forwards;
+  animation: moving 1s ease-in-out forwards;
 }
 .removemassege {
-  animation: hide_moving 1.5s ease-in-out forwards;
+  animation: hide_moving 1s ease-in-out forwards;
 }
 
 .fa-circle-exclamation {
@@ -874,6 +874,5 @@ select {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border: 2px solid red;
-  min-width: 167px;
+  min-width: 165px;
 }
