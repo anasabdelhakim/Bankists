@@ -868,12 +868,12 @@ select {
 
 .timer {
   text-align: right;
-  margin-left: 3px;
+  margin-left: 2px;
 }
 .time {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   border: 2px solid red;
-  min-width: 170px;
+  min-width: 167px;
 }
