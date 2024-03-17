@@ -872,7 +872,7 @@ select {
 }
 .time {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  min-width: 170px;
+  min-width: 168px;
 }
