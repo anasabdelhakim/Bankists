@@ -420,7 +420,7 @@ main .internal-movments {
   }
   .time {
     position: absolute;
-    bottom: -3px;
+    bottom: -6px;
     right: 8px;
     margin-bottom: var(--main-section);
   }
@@ -866,13 +866,10 @@ select {
   }
 }
 
-.timer {
-  text-align: right;
-  margin-left: 0.5px;
-}
+
 .time {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 164px;
+  min-width: 163px;
 }
