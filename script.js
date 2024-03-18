@@ -1,5 +1,7 @@
 "use strict";
 
+const masegeUsers = document.querySelectorAll("body");
+
 const account1 = {
   owner: "Jonas Schmedtmann",
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
@@ -109,7 +111,7 @@ const acceptMessage = document.querySelector(".accept");
 const errorMessage = document.querySelector(".erorr");
 
 //Body Section{
-document.querySelector("body").style.overflowY = "hidden";
+document.querySelector("body").style.overflow = "hidden";
 // document.querySelector(".overlay").classList.add("hidden");
 //}
 document.addEventListener("DOMContentLoaded", function () {
@@ -135,7 +137,7 @@ function scrollToTopOfHeader() {
   });
   window.addEventListener("scroll", function () {
     if (window.scrollY === 0 && mort) {
-      document.querySelector("body").style.overflowY = "hidden";
+      document.querySelector("body").style.overflow = "hidden";
     } else {
       document.querySelector("body").style.overflowY = "auto";
     }
@@ -168,24 +170,26 @@ const createUserAccount = (e) => {
     interestRate: 1.2,
     pin: parseInt(document.getElementById("user_pin").value),
     currency: CurrencyType.value,
-    locale: Knownlocal,
   };
 
   if (
     isNaN(User_Iinput.value.split(" ").join("")) &&
     accounts.every((ac) => ac.owner !== User_Iinput.value) &&
     accounts.every((ac) => ac.pin !== +User_Password.value) &&
-    User_Iinput.value.length >= 8 &&
+    User_Iinput.value.length >= 4 &&
     User_Iinput.value.length <= 16 &&
     User_Password.value.length === 4
   ) {
-    if (!errorMessage.classList.contains("addmassege") ||
-      errorMessage.classList.contains("removemassege")) {
+    UserAccount.locale = Knownlocal;
+    if (
+      !errorMessage.classList.contains("addmassege") ||
+      errorMessage.classList.contains("removemassege")
+    ) {
       acceptMessage.classList.remove("hidden", "removemassege");
       acceptMessage.classList.add("addmassege");
       setTimeout(function () {
         acceptMessage.classList.add("removemassege");
-      }, 5000);
+      }, 3000);
     } else {
       setTimeout(function () {
         acceptMessage.classList.remove("hidden", "removemassege");
@@ -195,13 +199,17 @@ const createUserAccount = (e) => {
         acceptMessage.classList.add("removemassege");
       }, 4500);
     }
+
     accounts.push(UserAccount);
 
     accountUser.classList.remove("sclad");
     accountUser.classList.add("scladoff");
+
     overlay.classList.add("overlayoff");
+
     errorMessage.classList.add("removemassege");
   } else {
+    acceptMessage.classList.add("hidden");
     errorMessage.classList.remove("hidden");
     errorMessage.classList.add("addmassege");
   }
@@ -218,14 +226,6 @@ const createUserAccount = (e) => {
   };
   CreateUsername(accounts);
 };
-
-function daytzbeet(currentDate) {
-  const day = currentDate.getDate().toString().padStart(2, "0");
-  const month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
-  const year = currentDate.getFullYear();
-  return `${day}/${month}/${year}`;
-}
-
 
 const checkTheTimezero = (es) => (es < 10 ? "0" + es : es);
 
@@ -259,13 +259,26 @@ function formatMovementDate(DateMove) {
     Math.abs(+new Date() - +new Date(DateMove)) / 72000000
   );
 
-  let DisplayMovemnts = daytzbeet(DateMove);
-  if (daysPassed === 0) DisplayMovemnts = "Today";
-  if (daysPassed === 1) DisplayMovemnts = "Yesterday";
-  if (daysPassed <= 7 && daysPassed > 1)
-    DisplayMovemnts = `${daysPassed} days ago`;
+  const today = CurrentAccount.locale === "ar-EG" ? "اليوم" : "Today";
+  const yesterday = CurrentAccount.locale === "ar-EG" ? "امبارح" : "Yesterday";
 
-  return DisplayMovemnts;
+  if (daysPassed === 0) {
+    return today;
+  } else if (daysPassed === 1) {
+    return yesterday;
+  } else if (daysPassed <= 7) {
+    return CurrentAccount.locale === "ar-EG"
+      ? `${daysPassed.toLocaleString("ar-EG")} أيام مضت`
+      : `${daysPassed} days ago`;
+  }
+
+  const target = Intl.DateTimeFormat(CurrentAccount.locale, {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+  }).format(DateMove);
+
+  return target;
 }
 
 function displayMovemnts(acc, s = false) {
@@ -285,17 +298,7 @@ function displayMovemnts(acc, s = false) {
     const CuerrancyMovment = currencyChange(m);
     const DateMove = new Date(acc.movementsDates[i]);
     const DisplayMovemnts = formatMovementDate(DateMove);
-     const options = {
-      day: "numeric",
-      month: "numeric",
-      year: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-    };
-    date.textContent = Intl.DateTimeFormat(
-      CurrentAccount.locale,
-      options
-    ).format(new Date());
+
     let type = m > 0 ? "DEPOSIT" : "WITHDRAWAL";
     const html = `<div class="all">
       <div class="movments">
@@ -357,8 +360,7 @@ btnLogin.addEventListener("click", function (e) {
   if (tim) clearInterval(tim);
   tim = StratLogOutTimer();
   mort = false;
-  acceptMessage.classList.add("hidden");
-  errorMessage.classList.add("hidden");
+
   CurrentAccount = accounts.find((le) => le.username === inputUsername.value);
   if (CurrentAccount?.pin === +inputPassword.value) {
     document.querySelector("body").style.overflowY = "auto";
@@ -367,6 +369,20 @@ btnLogin.addEventListener("click", function (e) {
         ? CurrentAccount.owner.split(" ")[0]
         : CurrentAccount.owner
     }`;
+
+    const options = {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+    };
+
+    date.textContent = Intl.DateTimeFormat(
+      CurrentAccount.locale,
+      options
+    ).format(new Date());
     inputUsername.value = "";
     inputPassword.value = "";
     inputPassword.blur();
@@ -379,7 +395,7 @@ btnLogin.addEventListener("click", function (e) {
 btnsort.addEventListener("click", function (e) {
   e.preventDefault();
   sort = !sort;
-  displayMovemnts(CurrentAccount.movements, sort);
+  displayMovemnts(CurrentAccount, sort);
 });
 
 btnTransferMney.addEventListener("click", function (e) {
